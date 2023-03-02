@@ -1,66 +1,68 @@
-#Ethan Nance
-#This program will use recent concepts learned in class/textbook to track exactly how many hamburgers each customer eats in the door dash example
+# Nya Croft, Matt Layden, Ethan Nance, Adam Kelley, Mclain Bement, Cameron Hammond
 
-#Import random
-import random
+# Write a program that generate a random burger number order and assigns it to a random customer name. 
+# Add 100 customers to a queue and keep a running total of the burger count using a dictionary. 
+# Display the customer name and running burger count total.
 
-#Create the Order class with constructor
-class Order () :
-    def __init__(self) :
+# Import random function
+from random import randint
+
+# Create Order class
+class Order :
+    def __init__ (self) :
         self.burger_count = self.randomBurgers()
-    
-    #Create the random burgers method
-    def randomBurgers(self) :
-        self.random_burger = random.randint(0,20)
-        return self.random_burger
 
-#Create the person class with constructor
-class Person() :
-    def __init__(self) :    
+    # Generate random number for burgers
+    def randomBurgers (self) :
+        iRandomNum = randint (1,20)
+        return iRandomNum
+
+# Create Person class
+class Person : 
+    def __init__ (self) : 
         self.customer_name = self.randomName()
-
-    #Create the random name method
+    
+    # Select a random name from the list
     def randomName (self) :
-        
-        #Create list of names to use, and assign each name an integer value
         asCustomers = ["Jefe", "El Guapo", "Lucky Day", "Ned Nederlander", "Dusty Bottoms", "Harry Flugleman", "Carmen", "Invisible Swordsman", "Singing Bush"]
-        random_name = random.randint(0,8)
+        iCustomerCount = len(asCustomers)
+        iRandomCustomer = randint(0, iCustomerCount - 1)
+        return asCustomers[iRandomCustomer]
 
-        #Return customer name
-        CustomerName = asCustomers[random_name]
-        return CustomerName
-
-#Create the customer class with constructor, and call parent class using super
-class Customer (Person) :
-    def __init__(self) :
+# Create Customer class
+class Customer (Person):
+    def __init__ (self) :
         super().__init__()
         self.order = Order()
 
-#Create a queue to hold customers
+# Create queue and dictionary
 queue = []
-
-#Create a dictionary to hold customer information
 customer_info = {}
 
-#Set customer count to 100
+# Initialize customer count
 iCustomerCount = 100
 
-#Loop to create and add customers to queue and update customer information in dictionary
-for iCount in range(1, iCustomerCount + 1) :
+# Add customers to queue and keep a running total of the burger count using a dictionary
+for iCount in range (1, (iCustomerCount + 1)) :
     customer = Customer()
+
+    # Add customer to queue
     queue.append(customer)
+
     customer_name = customer.customer_name
     burger_count = customer.order.burger_count
+
+    # Check to make sure the key exists, and if so, assign burger value. If not, create key
     if customer_name in customer_info :
         customer_info[customer_name] = customer_info[customer_name] + customer.order.burger_count
-    else:
+    else :
         customer_info[customer_name] = customer.order.burger_count
 
-#Sort the customer information in descending order by the number of burgers eaten
-listSortedCustomers = sorted(customer_info.items(), key=lambda x: x[1], reverse = True)
+# Sort customers
+listSortedCustomers = sorted(customer_info.items(), key=lambda x: x[1], reverse=True) 
 
-#Print out the customer information
-print("\n")
-for customer in listSortedCustomers:
-    print(customer[0].ljust(19),str(customer[1]))
-print("\n")
+# Print customers and burger count values
+print ("\n")
+for customer in listSortedCustomers :
+    print(customer[0].ljust(19), str(customer[1]))
+print ("\n")
