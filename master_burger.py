@@ -1,6 +1,6 @@
 # Nya Croft, Matt Layden, Ethan Nance, Adam Kelley, Mclain Bement, Cameron Hammond
 
-# Write a program that generate a random burger number order and assigns it to a random customer name. 
+# Write a program that generates a random burger number order and assigns it to a random customer name. 
 # Add 100 customers to a queue and keep a running total of the burger count using a dictionary. 
 # Display the customer name and running burger count total.
 
