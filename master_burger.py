@@ -58,6 +58,8 @@ for iCount in range (1, (iCustomerCount + 1)) :
     else :
         customer_info[customer_name] = customer.order.burger_count
 
+    queue.pop(0)
+
 # Sort customers
 listSortedCustomers = sorted(customer_info.items(), key=lambda x: x[1], reverse=True) 
 
