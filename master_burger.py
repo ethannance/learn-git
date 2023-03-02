@@ -46,7 +46,7 @@ customer_info = {}
 iCustomerCount = 100
 
 #Loop to create and add customers to queue and update customer information in dictionary
-for iCount in range(1, iCustomerCount) :
+for iCount in range(1, iCustomerCount + 1) :
     customer = Customer()
     queue.append(customer)
     customer_name = customer.customer_name
