@@ -38,25 +38,71 @@
             <label for="last30GPA">Last 30 Credits GPA:</label>
             <input type="number" step ='0.01' id="last30GPA" title="Enter your last 30 credits GPA">
             <br><br>
-            <label for="accountGrade">Accounting 200 GPA:</label>
+            <label for="AccountGrade">Accounting 200 Grade:</label>
             <select name = "accounting" id="listAccounting">
-                <option value="A">A</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B">B</option>
-                <option value="B-">B-</option>
-                <option value="C+">C+</option>
-                <option value="C">C</option>
-                <option value="C-">C-</option>
-                <option value="D+">D+</option>
-                <option value="D">D</option>
-                <option value="D-">D-</option>
-                <option value="F">F</option>
+                <option value=" "> </option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.4">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.4">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.4">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.7">D-</option>
+                <option value="0.0">F</option>
             </select>
             <br><br>
+            <label for="IS201Grade">IS 201 Grade:</label>
+            <select name = "IS201Grade" id="listIS201">
+                <option value=" "> </option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.4">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.4">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.4">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.7">D-</option>
+                <option value="0.0">F</option>
+            </select>
+            <br><br>
+            <label for="IS303Grade">IS 303 Grade:</label>
+            <select name = "IS303Grade" id="listIS303">\
+                <option value=" "> </option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.4">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.4">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.4">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.7">D-</option>
+                <option value="0.0">F</option>
+            </select>
+            <br><br>
+            <label for="EssayGrade">Essay Grade:</label>
+            <select name = "EssayGrade" id="listEssayGrade">
+                <option value=" "> </option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
         </fieldset>
         <br><br>
-        <button type="submit" id="submit">Submit Data</button>
+        <button onclick="calcGPA()">Calculate Core GPA</button>
+        <br><br>
+        <label id="coreGPA"></label>
     </form>
 </body>
 </html>
