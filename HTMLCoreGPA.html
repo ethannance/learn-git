@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //This function is called when the user clicks on the calcGPA button
+        function calcGPA()
+        {
+            //Extract the values from the HTML inputs by their assigned id and assigns them to variables
+            //The value extracted is converted from a string to a float/decimal
+            fIS201 = parseFloat(document.getElementById("is201Grade").value);
+            fACC200 = parseFloat(document.getElementById("acc200Grade").value);
+            fIS303= parseFloat(document.getElementById("is303Grade").value);
+            fOverallGPA = parseFloat(document.getElementById("overallGPA").value);
+            fLast30GPA = parseFloat(document.getElementById("last30GPA").value);
+            fEssay = parseInt(document.getElementById("essay").value);
 
+            //calculates new gpa
+            fFinalGPA = ((fIS201 * .3) + (fIS303 * .3) + (fACC200 * .05) + (fOverallGPA * .12) + (fLast30GPA * .18) + (fEssay * .05)).toFixed(2);
+
+            //Display the calculated GPA to the HTML label named "coreGPA"
+            document.getElementById("coreGPA").innerHTML = "Core GPA is " + fFinalGPA;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <fieldset style="width:0px;">
+            <legend>Core GPA</legend>
+            <label for="OverallGPA">Overall GPA:
+            <br>
+            <input type="number" step = '0.01' id="OverallGPA" title="Enter your overall GPA to 2 decimal points">
+            </label>
+            <br><br>
+            <label for="last30GPA">Last 30 Credits GPA:</label>
+            <input type="number" step ='0.01' id="last30GPA" title="Enter your last 30 credits GPA">
+            <br><br>
+            <label for="accountGrade">Accounting 200 GPA:</label>
+            <select name = "accounting" id="listAccounting">
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D+">D+</option>
+                <option value="D">D</option>
+                <option value="D-">D-</option>
+                <option value="F">F</option>
+            </select>
+            <br><br>
+        </fieldset>
+        <br><br>
+        <button type="submit" id="submit">Submit Data</button>
+    </form>
+</body>
+</html>
