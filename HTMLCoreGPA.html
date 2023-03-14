@@ -1,3 +1,7 @@
+<!-- Nya Croft, Matthew Leyden, Cameron Hamond, Ethan Nance, Adam Kelley, Mclain Bement -->
+<!-- This program will use the same logic as our core GPA calculation program, but -->
+<!-- grab the inputs from html buttons/input fields, and then run the calculation to display the copre GPA -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,16 +32,22 @@
 </head>
 <body>
     <form>
+
+        <!--Create fieldset, which will put the following buttons/text fields inside of a lined box-->
         <fieldset style="width:0px;">
+            <!-- Name the box that will contain everything-->
             <legend>Core GPA Calculation</legend>
+            <!--Create the text field to input the overall GPA, and add specifics for how it looks-->
             <label for="overallGPA">Overall GPA:
             <br>
             <input type="number" step = '0.01' id="overallGPA" title="Enter your overall GPA to 2 decimal points">
             </label>
             <br><br>
+            <!--Create the last 30 credits input field-->
             <label for="last30GPA">Last 30 Credits GPA:</label>
             <input type="number" step ='0.01' id="last30GPA" title="Enter your last 30 credits GPA to 2 decimal points">
             <br><br>
+            <!--Create the ACC200 Grade dropdown menu with letter grades as the options-->
             <label for="acc200Grade">Accounting 200 Grade:</label>
             <select name = "accounting" id="acc200Grade">
                 <option value=" "> </option>
@@ -55,6 +65,7 @@
                 <option value="0.0">F</option>
             </select>
             <br><br>
+            <!--Create the IS201 Grade dropdown menu with letter grades as the options-->
             <label for="iS201Grade">IS 201 Grade:</label>
             <select name = "IS201Grade" id="is201Grade">
                 <option value=" "> </option>
@@ -72,6 +83,7 @@
                 <option value="0.0">F</option>
             </select>
             <br><br>
+            <!--Create the IS303 Grade dropdown menu with letter grades as the options-->
             <label for="iS303Grade">IS 303 Grade:</label>
             <select name = "IS303Grade" id="is303Grade">\
                 <option value=" "> </option>
@@ -89,6 +101,7 @@
                 <option value="0.0">F</option>
             </select>
             <br><br>
+            <!--Create the Essay Grade dropdown menu with numbers 0-4 as the options-->
             <label for="essay">Essay Grade:</label>
             <select name = "EssayGrade" id="essay">
                 <option value=" "> </option>
@@ -100,6 +113,7 @@
             </select>
         </fieldset>
         <br><br>
+        <!--Create the Calculate GPA button that runs the functions from JavaScript that was provided-->
         <button type="button" onclick="calcGPA()">Calculate Core GPA</button>
         <br><br>
         <label id="coreGPA"></label>
